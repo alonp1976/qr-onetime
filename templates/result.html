@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="utf-8"/><title>QR נוצר</title></head>
+<body>
+  <h1>✅ ה-QR החד-פעמי נוצר</h1>
+  {% if one_time_full %}
+    <p>קישור חד-פעמי: <a href="{{ one_time_full }}">{{ one_time_full }}</a></p>
+    <p>הורד את התמונה: <a href="/static/generated/{{ img_name }}" target="_blank">פתח PNG</a></p>
+  {% endif %}
+  {% if original and direct_view %}
+    <h3>תוכן ה-QR המקורי (טקסט):</h3>
+    <pre>{{ original }}</pre>
+  {% endif %}
+  {% if original and not direct_view %}
+    <p>תוכן ה-QR המקורי (לנחיצות): <code>{{ original }}</code></p>
+  {% endif %}
+</body>
+</html>
